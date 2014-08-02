@@ -1,0 +1,15 @@
+{
+  "name": "generator-pk-node",
+  "version": "0.0.0",
+  "keywords": ["yeoman-generator"],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/pkozlowski-opensource/generator-pk-node.git"
+  },
+  "bugs": {
+    "url": "https://github.com/pkozlowski-opensource/generator-pk-node/issues"
+  },
+  "dependencies": {
+    "yeoman-generator": "^0.16.0"
+  }
+}
