@@ -2,6 +2,16 @@ var yeoman = require('yeoman-generator');
 
 module.exports = yeoman.generators.Base.extend({
 
+  //yo run phases:
+  //initializing - Your initialization methods (checking current project state, getting configs, etc)
+  //prompting - Where you prompt users for options (where you'd call this.prompt())
+  //configuring - Saving configurations and configure the project (creating .editorconfig files and other metadata files)
+  //default
+  //writing - Where you write the generator specific files (routes, controllers, etc)
+  //conflicts - Where conflicts are handled (used internally)
+  //install - Where installation are run (npm, bower)
+  //end - Called last, cleanup, say good bye, etc
+
   promptTask: function () {
     var done = this.async();
     this.prompt({
@@ -38,6 +48,11 @@ module.exports = yeoman.generators.Base.extend({
 
   readme: function() {
     this.template('README.md');
+  },
+
+  install: function () {
+    var done = this.async();
+    this.npmInstall(['gulp', 'gulp-jshint', 'gulp-mocha', 'chai'], { 'saveDev': true }, done);
   }
 
 });

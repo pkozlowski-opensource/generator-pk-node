@@ -5,7 +5,5 @@
     "node": ">=0.10.0"
   },
   "devDependencies": {
-    "gulp": "^3.6.0",
-    "gulp-jshint": "^1.8.3"
   }
 }
