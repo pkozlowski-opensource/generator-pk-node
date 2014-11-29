@@ -14,11 +14,12 @@ gulp.task('lint', function () {
 });
 
 gulp.task('test', function () {
-  gulp.src(PATHS.test, {read: false}).pipe(mocha());
+  gulp.src(PATHS.test, {read: false})
+    .pipe(mocha().on('error', function() {}));
 });
 
-gulp.task('tdd', function () {
-  gulp.watch(PATHS.test, ['test']);
+gulp.task('tdd', ['test'], function () {
+  gulp.watch([PATHS.src, PATHS.test], ['test']);
 });
 
 gulp.task('default', ['lint', 'test']);
